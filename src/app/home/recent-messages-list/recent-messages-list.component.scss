@@ -1,0 +1,24 @@
+.profile-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.header-icons {
+  width: 24px;
+  height: 24px;
+  margin: 8px;
+  cursor: pointer;
+}
+
+header {
+  background-color: var(--panel-header-background);
+}
+
+.search-container{
+  height: 49px;
+  background-color: var(--background-white);
+  padding: 0 12px;
+  border-bottom: 1px solid var(--border-bottom);
+}
