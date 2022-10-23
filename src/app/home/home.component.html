@@ -2,16 +2,29 @@
   <div class="green-container"></div>
   <div class="main-container">
     <div class="d-flex h-100">
-      <div class="col-3 h-100" style="background-color: white;">
-        <app-recent-messages-list></app-recent-messages-list>
+      <div class="col-3 h-100" style="background-color: white">
+        <app-recent-messages-header></app-recent-messages-header>
+        <app-recent-message-items
+          (onChatItemSelect)="onConversationSelected($event)"
+        ></app-recent-message-items>
       </div>
       <div class="col-9 h-100">
-        <div class="default-container">
-          <img src="assets/drawables/home-default-icon.svg" alt="home-default-icon">
+        <div class="default-container" *ngIf="!conversation">
+          <img
+            src="assets/drawables/home-default-icon.svg"
+            alt="home-default-icon"
+          />
           <h1>WhatsApp Web</h1>
-          <div class="default-text-desc">Send and receive messages without keeping your phone online.<br>Use WhatsApp on up to 4 linked devices and 1 phone at the same time.</div>
-          <div class="end-to-end-text"><img src="assets/drawables/lock.svg" alt="lock"> End-to-end encrypted</div>
+          <div class="default-text-desc">
+            Send and receive messages without keeping your phone online.<br />Use
+            WhatsApp on up to 4 linked devices and 1 phone at the same time.
+          </div>
+          <div class="end-to-end-text">
+            <img src="assets/drawables/lock.svg" alt="lock" /> End-to-end
+            encrypted
+          </div>
         </div>
+        <app-chat [conversation]="conversation" *ngIf="conversation"></app-chat>
       </div>
     </div>
   </div>
