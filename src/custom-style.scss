@@ -12,6 +12,10 @@
   --primary-title: #41525d;
   --secondary-lighter: #8696a0;
   --border-bottom: #F0F2F5;
+  --search-input-background: #f0f2f5;
+  --timestamp: #667781;
+  --icon-grey-color: #54656f;
+  --background-default-hover: #f5f6f6;
 }
 
 html, body {
@@ -19,4 +23,14 @@ html, body {
   height: 100%;
   margin: 0;
   padding: 0;
+  font-family: Segoe UI,Helvetica Neue,Helvetica,Lucida Grande,Arial,Ubuntu,Cantarell,Fira Sans,sans-serif;
 }
+
+.form-control:focus {
+  color: unset;
+  background-color: #fff;
+  border-color: unset;
+  outline: 0;
+  box-shadow: unset
+}
+

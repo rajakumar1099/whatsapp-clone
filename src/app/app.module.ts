@@ -5,12 +5,14 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { RecentMessagesListComponent } from './home/recent-messages-list/recent-messages-list.component';
+import { RecentMessageItemsComponent } from './home/recent-message-items/recent-message-items.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-    RecentMessagesListComponent
+    RecentMessagesListComponent,
+    RecentMessageItemsComponent
   ],
   imports: [
     BrowserModule,
