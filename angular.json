@@ -29,7 +29,8 @@
             ],
             "styles": [
               "src/styles.scss",
-              "src/custom-style.scss"
+              "src/custom-style.scss",
+              "node_modules/@ctrl/ngx-emoji-mart/picker.css"
             ],
             "scripts": []
           },
@@ -98,7 +99,8 @@
             ],
             "styles": [
               "src/styles.scss",
-              "src/custom-style.scss"
+              "src/custom-style.scss",
+              "node_modules/@ctrl/ngx-emoji-mart/picker.css"
             ],
             "scripts": []
           }

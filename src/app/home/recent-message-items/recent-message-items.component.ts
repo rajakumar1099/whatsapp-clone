@@ -1,4 +1,5 @@
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { RecentChatInterface } from 'src/app/model/RecentChatInterface';
 
 @Component({
   selector: 'app-recent-message-items',
@@ -6,14 +7,13 @@ import { Component, EventEmitter, OnInit, Output } from '@angular/core';
   styleUrls: ['./recent-message-items.component.scss'],
 })
 export class RecentMessageItemsComponent implements OnInit {
-  public data: string = 'test';
+  @Input() recentChatData: RecentChatInterface[] | undefined
   @Output() onChatItemSelect: EventEmitter<string> = new EventEmitter();
   constructor() {}
 
   ngOnInit(): void {}
 
-  public onChatSelected() {
-    this.onChatItemSelect.emit(this.data);
-    console.log(this.onChatItemSelect);
+  public onChatSelected(data: any) {
+    this.onChatItemSelect.emit(data);
   }
 }

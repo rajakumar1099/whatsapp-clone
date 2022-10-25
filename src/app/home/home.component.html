@@ -4,9 +4,10 @@
     <div class="d-flex h-100">
       <div class="col-3 h-100" style="background-color: white">
         <app-recent-messages-header></app-recent-messages-header>
-        <app-recent-message-items
-          (onChatItemSelect)="onConversationSelected($event)"
-        ></app-recent-message-items>
+          <app-recent-message-items
+            [recentChatData]="recentChatList"
+            (onChatItemSelect)="onConversationSelected($event)"
+          ></app-recent-message-items>
       </div>
       <div class="col-9 h-100">
         <div class="default-container" *ngIf="!conversation">

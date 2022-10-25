@@ -24,6 +24,10 @@
   display: none;
 }
 
+.chat-item-container {
+  border-bottom: 1px solid var(--border-list);
+}
+
 .chat-item-container:hover {
   background-color: var(--background-default-hover);
   cursor: pointer;

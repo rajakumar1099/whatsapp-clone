@@ -7,6 +7,7 @@ import { HomeComponent } from './home/home.component';
 import { RecentMessagesHeaderComponent } from './home/recent-messages-header/recent-messages-header.component';
 import { RecentMessageItemsComponent } from './home/recent-message-items/recent-message-items.component';
 import { ChatComponent } from './home/chat/chat.component';
+import { PickerModule } from '@ctrl/ngx-emoji-mart';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,7 @@ import { ChatComponent } from './home/chat/chat.component';
     RecentMessageItemsComponent,
     ChatComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule],
+  imports: [BrowserModule, AppRoutingModule, PickerModule],
   providers: [],
   bootstrap: [AppComponent],
 })
