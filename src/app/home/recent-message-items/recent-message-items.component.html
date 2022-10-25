@@ -1,0 +1,21 @@
+<div class="d-flex py-2 px-3 chat-item-container" (click)="onChatSelected(item)" *ngFor="let item of recentChatData">
+  <img
+    class="profile-avatar"
+    [src]="item.displayProfileImage"
+    alt="avatar"
+  />
+  <div class="d-flex flex-column w-100 chat-content">
+    <div class="d-flex flex-row justify-content-between">
+      <div class="contact-name">{{item.displayName ? item.displayName : item.number}}</div>
+      <div class="timestamp">10/13/2022</div>
+    </div>
+    <div class="d-flex flex-row justify-content-between">
+      <div class="last-message">Good morning</div>
+      <img
+        class="down-arrow"
+        src="assets/drawables/down-arrow.svg"
+        alt="down-arrow"
+      />
+    </div>
+  </div>
+</div>

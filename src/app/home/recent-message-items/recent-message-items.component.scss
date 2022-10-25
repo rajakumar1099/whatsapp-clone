@@ -1,0 +1,43 @@
+.profile-avatar {
+  width: 49px;
+  height: 49px;
+  border-radius: 50%;
+  margin-right: 15px;
+}
+
+.contact-name {
+  font-size: 17px;
+}
+
+.last-message {
+  font-size: 14px;
+}
+
+.timestamp {
+  font-size: 12px;
+  color: var(--timestamp);
+}
+
+.down-arrow {
+  width: 20px;
+  height: 20px;
+  display: none;
+}
+
+.chat-item-container {
+  border-bottom: 1px solid var(--border-list);
+}
+
+.chat-item-container:hover {
+  background-color: var(--background-default-hover);
+  cursor: pointer;
+
+  .down-arrow {
+    display: unset;
+    cursor: pointer;
+  }
+}
+
+img {
+  fill: grey
+}

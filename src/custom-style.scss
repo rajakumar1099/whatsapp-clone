@@ -1,0 +1,39 @@
+:root {
+  // custom colors
+  --green-color: #008069;
+  --light-green-color: #00A884;
+  --text-color: #41525D;
+  --background-dull-white-color: #E1E1DD;
+  --background-white: #ffffff;
+  --shadow-rgb: 11,20,26;
+  --panel-background-lighter: #f7f8fa;
+  --panel-header-background: #f0f2f5;
+  --intro-secondary: #667781;
+  --primary-title: #41525d;
+  --secondary-lighter: #8696a0;
+  --border-bottom: #F0F2F5;
+  --search-input-background: #f0f2f5;
+  --timestamp: #667781;
+  --icon-grey-color: #54656f;
+  --background-default-hover: #f5f6f6;
+  --conversation-panel-background: #efeae2;
+  --conversation-header-border: #d1d7db;
+  --border-list: #e9edef;
+}
+
+html, body {
+  background: transparent;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: Segoe UI,Helvetica Neue,Helvetica,Lucida Grande,Arial,Ubuntu,Cantarell,Fira Sans,sans-serif;
+}
+
+.form-control:focus {
+  color: unset;
+  background-color: #fff;
+  border-color: unset;
+  outline: 0;
+  box-shadow: unset
+}
+
