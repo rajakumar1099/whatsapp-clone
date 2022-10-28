@@ -5,7 +5,7 @@
   --text-color: #41525D;
   --background-dull-white-color: #E1E1DD;
   --background-white: #ffffff;
-  --shadow-rgb: 11,20,26;
+  --shadow-rgb: 11, 20, 26;
   --panel-background-lighter: #f7f8fa;
   --panel-header-background: #f0f2f5;
   --intro-secondary: #667781;
@@ -19,14 +19,17 @@
   --conversation-panel-background: #efeae2;
   --conversation-header-border: #d1d7db;
   --border-list: #e9edef;
+  --grey-text-color: #3b4a54;
+  --text-muted: #8696a0;
 }
 
-html, body {
+html,
+body {
   background: transparent;
   height: 100%;
   margin: 0;
   padding: 0;
-  font-family: Segoe UI,Helvetica Neue,Helvetica,Lucida Grande,Arial,Ubuntu,Cantarell,Fira Sans,sans-serif;
+  font-family: Segoe UI, Helvetica Neue, Helvetica, Lucida Grande, Arial, Ubuntu, Cantarell, Fira Sans, sans-serif;
 }
 
 .form-control:focus {
@@ -35,5 +38,20 @@ html, body {
   border-color: unset;
   outline: 0;
   box-shadow: unset
+}
+
+.noselect, img {
+  -webkit-touch-callout: none;
+  /* iOS Safari */
+  -webkit-user-select: none;
+  /* Safari */
+  -khtml-user-select: none;
+  /* Konqueror HTML */
+  -moz-user-select: none;
+  /* Old versions of Firefox */
+  -ms-user-select: none;
+  /* Internet Explorer/Edge */
+  user-select: none;
+  /* Non-prefixed version, currently supported by Chrome, Edge, Opera and Firefox */
 }
 

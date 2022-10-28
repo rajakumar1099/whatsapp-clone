@@ -1,0 +1,109 @@
+.edit-profile-container {
+  height: 100%;
+  position: absolute;
+  top: 0;
+  background-color: var(--panel-header-background);
+}
+
+.header {
+  height: 108px;
+  padding-right: 20px;
+  padding-left: 23px;
+  background-color: var(--green-color);
+}
+
+.header-content {
+  height: 59px;
+  position: absolute;
+  top: 5%;
+  transition: all 1s;
+}
+
+.back-arrow-icon {
+  width: 24px;
+  margin-right: 28px;
+  cursor: pointer;
+  margin-top: 4px;
+}
+
+.header-text {
+  font-size: 19px;
+  color: white;
+  font-weight: 500;
+}
+
+.profile-avatar {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.profile-avatar-img {
+  border-radius: 50%;
+  margin: 28px 0px;
+  width: 200px;
+  height: 200px;
+  transition: .5s ease;
+}
+
+
+.change-profile {
+  border-radius: 50%;
+  margin: 28px 0px;
+  width: 200px;
+  height: 200px;
+  position: absolute;
+  margin-top: 7%;
+  margin-left: 0%;
+  background-color: #54656fcc;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  flex-direction: column;
+  cursor: pointer;
+  opacity: 0;
+  transition: .5s ease;
+}:hover {
+  opacity: 1;
+}
+
+.change-profile-text {
+  font-size: 13px;
+  text-align: center;
+  width: 100px;
+  color: white;
+}
+
+.name-container {
+  height: 95px;
+  background-color: white;
+  padding: 10px 30px 14px 30px;
+  margin-bottom: 10px;
+}
+
+.name-label {
+  font-size: 14px;
+  color: var(--green-color);
+  margin-bottom: 14px;
+  font-weight: 400;
+}
+
+.name-text {
+  color: var(--grey-text-color);
+  margin: 8px 0;
+  font-size: 17px;
+  display: flex;
+  justify-content: space-between;
+  cursor: pointer;
+}
+
+.username-help-text {
+  font-size: 14px;
+  margin-right: 20px;
+  margin-left: 30px;
+  margin-top: 4px;
+  margin-bottom: 28px;
+  color: var(--text-muted);
+}
