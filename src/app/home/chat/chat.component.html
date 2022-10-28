@@ -6,27 +6,57 @@
       alt="avatar"
     />
     <div class="d-flex flex-column w-100">
-      <div>{{conversation?.displayName ? conversation?.displayName : conversation?.number}}</div>
+      <div>
+        {{
+          conversation?.displayName
+            ? conversation?.displayName
+            : conversation?.number
+        }}
+      </div>
       <div class="lastseen">Online</div>
     </div>
-    <div class="chat-header-icons d-flex">
-      <img src="assets/drawables/search-icon.svg" alt="search" />
-      <img src="assets/drawables/menu-icon.svg" alt="search" />
+    <div class="d-flex">
+      <div class="chat-header-icons">
+        <img class="search-icon" src="assets/drawables/search-icon.svg" alt="search" />
+      </div>
+      <div class="chat-header-icons">
+        <img class="menu-icon" src="assets/drawables/menu-icon.svg" alt="search" />
+      </div>
     </div>
   </header>
   <div>
-    <emoji-mart (emojiSelect)="addEmoji($event)" [darkMode]="false" [showPreview]="false" [style]="{ width:'75%', position: 'absolute', bottom: '63px', right: '0px' }" title="Pick your emoji…" [emojiTooltip]="true" *ngIf="showEmojiPicker"></emoji-mart>
+    <emoji-mart
+      color="#008069"
+      [emojiSize]="32"
+      (emojiSelect)="addEmoji($event)"
+      [darkMode]="false"
+      [showPreview]="false"
+      [style]="{
+        width: '75%',
+        position: 'absolute',
+        bottom: '59px',
+        right: '0px'
+      }"
+      title="Pick your emoji…"
+      [emojiTooltip]="true"
+      *ngIf="showEmojiPicker"
+    ></emoji-mart>
   </div>
   <footer class="col-9 d-flex">
     <div class="d-flex">
-      <img src="assets/drawables/emoji-icon.svg" alt="emoji-icon" (click)="toggleEmojiPicker()">
-      <img src="assets/drawables/attachment-icon.svg" alt="emoji-icon">
+      <img
+        src="assets/drawables/emoji-icon.svg"
+        alt="emoji-icon"
+        (click)="toggleEmojiPicker()"
+      />
+      <img src="assets/drawables/attachment-icon.svg" alt="emoji-icon" />
     </div>
     <div class="input-group">
       <input
         type="text"
         class="form-control"
         placeholder="Search or start new chat"
+        autofocus
       />
     </div>
   </footer>

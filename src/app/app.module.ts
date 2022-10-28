@@ -8,6 +8,7 @@ import { RecentMessagesHeaderComponent } from './home/recent-messages-header/rec
 import { RecentMessageItemsComponent } from './home/recent-message-items/recent-message-items.component';
 import { ChatComponent } from './home/chat/chat.component';
 import { PickerModule } from '@ctrl/ngx-emoji-mart';
+import { EditProfileComponent } from './home/edit-profile/edit-profile.component';
 
 @NgModule({
   declarations: [
@@ -16,6 +17,7 @@ import { PickerModule } from '@ctrl/ngx-emoji-mart';
     RecentMessagesHeaderComponent,
     RecentMessageItemsComponent,
     ChatComponent,
+    EditProfileComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, PickerModule],
   providers: [],

@@ -79,9 +79,18 @@ header {
   font-size: 13px;
 }
 
-.chat-header-icons img {
-  padding: 8px;
+.search-icon {
   cursor: pointer;
+  width: 30px;
+  height: 30px;
+  margin: 5px;
+}
+
+.menu-icon {
+  cursor: pointer;
+  width: 25px;
+  height: 25px;
+  margin: 7px;
 }
 
 footer {
@@ -113,4 +122,3 @@ input:focus {
   background-color: var(--search-input-background);
   border: unset;
 }
-
