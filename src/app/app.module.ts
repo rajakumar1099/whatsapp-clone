@@ -9,6 +9,8 @@ import { RecentMessageItemsComponent } from './home/recent-message-items/recent-
 import { ChatComponent } from './home/chat/chat.component';
 import { PickerModule } from '@ctrl/ngx-emoji-mart';
 import { EditProfileComponent } from './home/edit-profile/edit-profile.component';
+import { LoginComponent } from './login/login.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -18,8 +20,9 @@ import { EditProfileComponent } from './home/edit-profile/edit-profile.component
     RecentMessageItemsComponent,
     ChatComponent,
     EditProfileComponent,
+    LoginComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule, PickerModule],
+  imports: [BrowserModule, AppRoutingModule, PickerModule, ReactiveFormsModule],
   providers: [],
   bootstrap: [AppComponent],
 })

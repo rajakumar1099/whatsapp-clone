@@ -1,0 +1,38 @@
+<div class="root">
+  <div class="header-container d-flex flex-column">
+    <div class="header-label d-flex">
+      <div class="header-img">
+        <img
+          src="../../assets/drawables/whatsapp-logo.svg"
+          alt="whatsapp-logo"
+        />
+      </div>
+      <div class="header-text">WhatsApp Web</div>
+    </div>
+    <div class="center-container">
+      <div class="center-container-header">
+        Login to use WhatsApp on your computer
+      </div>
+      <form [formGroup]="form">
+        <div class="input-group" *ngIf="isSignUpEnabled">
+          <input type="text" class="form-control" placeholder="Name" />
+        </div>
+        <div class="input-group">
+          <input
+            type="number"
+            class="form-control"
+            formControlName="phoneNumber"
+            placeholder="Phone number"
+            autofocus
+          />
+          <button type="button" class="btn login-btn" (click)="login()">
+            {{ isSignUpEnabled ? "Sign up" : "Login" }}
+          </button>
+        </div>
+      </form>
+      <div class="sign-up-text" (click)="toggleSignUp()">
+        {{ isSignUpEnabled ? 'Already have an account? Login' : 'New to WhatsApp? Sign up' }}
+      </div>
+    </div>
+  </div>
+</div>
