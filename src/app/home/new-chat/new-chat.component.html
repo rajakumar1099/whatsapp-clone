@@ -1,0 +1,38 @@
+<div class="col-3 edit-profile-container noselect">
+  <div class="header">
+    <div class="header-content slide-in d-flex align-items-center">
+      <img
+        class="back-arrow-icon"
+        src="assets/drawables/back-arrow-icon.svg"
+        alt="back-arrow-icon"
+        skipLocationChange
+        routerLink="../"
+      />
+      <div class="header-text noselect">New chat</div>
+    </div>
+  </div>
+  <div class="search-container">
+    <div class="input-group">
+      <span class="input-group-text"
+        ><img src="assets/drawables/search-icon.svg" alt="search"
+      /></span>
+      <input
+        type="text"
+        class="form-control"
+        placeholder="Search or start new chat"
+        [(ngModel)]="filterTerm"
+      />
+    </div>
+  </div>
+  <div *ngIf="getProfiles$ | async as getProfiles">
+    <div *ngFor="let profile of getProfiles.data | filter: filterTerm">
+      <div class="new-chat-item" (click)="openChat(profile)">
+        <img [src]="profile?.profile_image ? profile?.profile_image : '/assets/drawables/default-avatar.svg'" alt="profile_image" />
+        <div class="w-100 new-chat-item-hea der" style="padding: 13px 0px; padding-right: 15px;">
+          <div class="new-chat-item-header-name">{{ profile?.display_name }}</div>
+          <div class="new-chat-item-header-bio">{{ profile?.bio }}</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

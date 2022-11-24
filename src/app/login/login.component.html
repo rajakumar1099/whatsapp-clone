@@ -11,27 +11,45 @@
     </div>
     <div class="center-container">
       <div class="center-container-header">
-        Login to use WhatsApp on your computer
+        {{
+          isSignUp
+            ? "Sign up to use WhatsApp on your computer"
+            : "Login to use WhatsApp on your computer"
+        }}
       </div>
       <form [formGroup]="form">
-        <div class="input-group" *ngIf="isSignUpEnabled">
-          <input type="text" class="form-control" placeholder="Name" />
+        <div class="input-group" *ngIf="isSignUp">
+          <input
+            type="text"
+            [formControlName]="formControlConst.DISPLAYNAME"
+            class="form-control"
+            placeholder="Name"
+          />
+        </div>
+        <div class="form-error-text" *ngIf="isSignUp && !form.controls[formControlConst.DISPLAYNAME].valid && (form.controls[formControlConst.DISPLAYNAME].dirty || form.controls[formControlConst.DISPLAYNAME].touched)">
+          {{ showFormError(formControlConst.DISPLAYNAME) }}
         </div>
         <div class="input-group">
           <input
             type="number"
             class="form-control"
-            formControlName="phoneNumber"
+            [formControlName]="formControlConst.PHONENUMBER"
             placeholder="Phone number"
-            autofocus
           />
           <button type="button" class="btn login-btn" (click)="login()">
-            {{ isSignUpEnabled ? "Sign up" : "Login" }}
+            {{ isSignUp ? "Sign up" : "Login" }}
           </button>
+        </div>
+        <div class="form-error-text" *ngIf="!form.controls[formControlConst.PHONENUMBER].valid && (form.controls[formControlConst.PHONENUMBER].dirty || form.controls[formControlConst.PHONENUMBER].touched)">
+          {{ showFormError(formControlConst.PHONENUMBER) }}
         </div>
       </form>
       <div class="sign-up-text" (click)="toggleSignUp()">
-        {{ isSignUpEnabled ? 'Already have an account? Login' : 'New to WhatsApp? Sign up' }}
+        {{
+          isSignUp
+            ? "Already have an account? Login"
+            : "New to WhatsApp? Sign up"
+        }}
       </div>
     </div>
   </div>

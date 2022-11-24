@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { RecentChatInterface } from '../model/RecentChatInterface';
+import { StorageService } from '../services/storage/storage.service';
 
 @Component({
   selector: 'app-home',
@@ -9,7 +10,7 @@ import { RecentChatInterface } from '../model/RecentChatInterface';
 export class HomeComponent implements OnInit {
   public conversation: any;
   public recentChatList: RecentChatInterface[] = [];
-  constructor() {}
+  constructor(private storageService: StorageService) {}
 
   ngOnInit(): void {
     this.loadChatList();
@@ -23,45 +24,45 @@ export class HomeComponent implements OnInit {
     this.recentChatList = [
       {
         id: 1,
-        displayName: 'Rajakumar-Jio',
-        number: '+91-9876543210',
-        displayProfileImage:
-          'https://pps.whatsapp.net/v/t61.24694-24/290889392_5535802236431875_5364001910112459034_n.jpg?stp=dst-jpg_s96x96&ccb=11-4&oh=01_AdTyAvc2kikWkYtMcBzGsjCDcVLJypIF6301_N5Kh9k1wQ&oe=63636D2A',
+        display_name: 'Rajakumar-Jio',
+        phone_number: '+91-9876543210',
+        profile_image:
+          '',
       },
       {
         id: 2,
-        displayName: '',
-        number: '+91-9876543210',
-        displayProfileImage:
-          'https://pps.whatsapp.net/v/t61.24694-24/290889392_5535802236431875_5364001910112459034_n.jpg?stp=dst-jpg_s96x96&ccb=11-4&oh=01_AdTyAvc2kikWkYtMcBzGsjCDcVLJypIF6301_N5Kh9k1wQ&oe=63636D2A',
+        display_name: 'Vikram',
+        phone_number: '+91-9876543210',
+        profile_image:
+          '',
       },
       {
         id: 3,
-        displayName: 'Jessy',
-        number: '+91-9876543210',
-        displayProfileImage:
-          'https://pps.whatsapp.net/v/t61.24694-24/290889392_5535802236431875_5364001910112459034_n.jpg?stp=dst-jpg_s96x96&ccb=11-4&oh=01_AdTyAvc2kikWkYtMcBzGsjCDcVLJypIF6301_N5Kh9k1wQ&oe=63636D2A',
+        display_name: 'Jessy',
+        phone_number: '+91-9876543210',
+        profile_image:
+          '',
       },
       {
         id: 4,
-        displayName: 'Karthik',
-        number: '+91-9876543210',
-        displayProfileImage:
-          'https://pps.whatsapp.net/v/t61.24694-24/290889392_5535802236431875_5364001910112459034_n.jpg?stp=dst-jpg_s96x96&ccb=11-4&oh=01_AdTyAvc2kikWkYtMcBzGsjCDcVLJypIF6301_N5Kh9k1wQ&oe=63636D2A',
+        display_name: 'Karthik',
+        phone_number: '+91-9876543210',
+        profile_image:
+          '',
       },
       {
         id: 5,
-        displayName: 'Viky',
-        number: '+91-9876543210',
-        displayProfileImage:
-          'https://pps.whatsapp.net/v/t61.24694-24/290889392_5535802236431875_5364001910112459034_n.jpg?stp=dst-jpg_s96x96&ccb=11-4&oh=01_AdTyAvc2kikWkYtMcBzGsjCDcVLJypIF6301_N5Kh9k1wQ&oe=63636D2A',
+        display_name: 'Viky',
+        phone_number: '+91-9876543210',
+        profile_image:
+          '',
       },
       {
         id: 6,
-        displayName: 'Sasi',
-        number: '+91-9876543210',
-        displayProfileImage:
-          'https://pps.whatsapp.net/v/t61.24694-24/290889392_5535802236431875_5364001910112459034_n.jpg?stp=dst-jpg_s96x96&ccb=11-4&oh=01_AdTyAvc2kikWkYtMcBzGsjCDcVLJypIF6301_N5Kh9k1wQ&oe=63636D2A',
+        display_name: 'Sasi',
+        phone_number: '+91-9876543210',
+        profile_image:
+          '',
       },
     ];
   }

@@ -1,10 +1,14 @@
-<div>
+<div ngbDropdown placement="bottom-right">
   <header class="w-100 px-3 py-2 d-flex justify-content-between">
     <img
       class="profile-avatar"
-      src="https://pps.whatsapp.net/v/t61.24694-24/295202271_781116623092729_4957902355408740932_n.jpg?stp=dst-jpg_s96x96&ccb=11-4&oh=01_AdROGOHpwRM7Y8kTJc27HZZvbN-lpDqNma-3xhw0Rbqfgg&oe=635EDC21"
+      [src]="
+        profileData?.profile_image
+          ? profileData?.profile_image
+          : '/assets/drawables/default-avatar.svg'
+      "
       alt="avatar"
-      routerLink="edit-profile"
+      (click)="openEditProfile()"
     />
     <div class="d-flex" style="align-self: center; gap: 15px">
       <img
@@ -16,24 +20,19 @@
         class="header-icons"
         src="assets/drawables/new-chat-icon.svg"
         alt="status-icon"
+        (click)="openNewChat()"
       />
       <img
-        class="header-icons"
+        class="header-icons dropdown-toggle"
         src="assets/drawables/menu-icon.svg"
         alt="status-icon"
+        id="dropdownBasic2"
+        ngbDropdownToggle
       />
     </div>
   </header>
-  <div class="search-container">
-    <div class="input-group">
-      <span class="input-group-text"
-        ><img src="assets/drawables/search-icon.svg" alt="search"
-      /></span>
-      <input
-        type="text"
-        class="form-control"
-        placeholder="Search or start new chat"
-      />
-    </div>
+  <div ngbDropdownMenu aria-labelledby="dropdownBasic2" class="dropdown-menu">
+    <button ngbDropdownItem class="dropdown-item">Settings</button>
+    <button ngbDropdownItem (click)="logout()">Logout</button>
   </div>
 </div>

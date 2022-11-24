@@ -10,7 +10,21 @@ import { ChatComponent } from './home/chat/chat.component';
 import { PickerModule } from '@ctrl/ngx-emoji-mart';
 import { EditProfileComponent } from './home/edit-profile/edit-profile.component';
 import { LoginComponent } from './login/login.component';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { AddHeaderInterceptor } from './utils/Interceptors/AddHeaderInterceptor';
+import { AuthService } from './services/auth.service';
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
+import { AuthGuard } from './utils/Gaurd/Auth.gaurd';
+import {
+  NgbPaginationModule,
+  NgbAlertModule,
+  NgbModule,
+} from '@ng-bootstrap/ng-bootstrap';
+import { NewChatComponent } from './home/new-chat/new-chat.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { LoginGaurd } from './utils/Gaurd/Login.gaurd';
+import { DefaultContainerComponent } from './home/default-container/default-container.component';
 
 @NgModule({
   declarations: [
@@ -21,9 +35,32 @@ import { ReactiveFormsModule } from '@angular/forms';
     ChatComponent,
     EditProfileComponent,
     LoginComponent,
+    NewChatComponent,
+    DefaultContainerComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule, PickerModule, ReactiveFormsModule],
-  providers: [],
+  imports: [
+    BrowserAnimationsModule,
+    BrowserModule,
+    AppRoutingModule,
+    PickerModule,
+    ReactiveFormsModule,
+    HttpClientModule,
+    FormsModule,
+    Ng2SearchPipeModule,
+    NgbPaginationModule,
+    NgbAlertModule,
+    NgbModule
+  ],
+  providers: [
+    AuthService,
+    AuthGuard,
+    LoginGaurd,
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: AddHeaderInterceptor,
+      multi: true,
+    },
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
