@@ -6,27 +6,11 @@
         <app-recent-messages-header></app-recent-messages-header>
           <app-recent-message-items
             [recentChatData]="recentChatList"
-            (onChatItemSelect)="onConversationSelected($event)"
           ></app-recent-message-items>
         <router-outlet></router-outlet>
       </div>
       <div class="col-9 h-100">
-        <div class="default-container" *ngIf="!conversation">
-          <img
-            src="assets/drawables/home-default-icon.svg"
-            alt="home-default-icon"
-          />
-          <h1 class="noselect">WhatsApp Web</h1>
-          <div class="default-text-desc noselect">
-            Send and receive messages without keeping your phone online.<br />Use
-            WhatsApp on up to 4 linked devices and 1 phone at the same time.
-          </div>
-          <div class="end-to-end-text noselect">
-            <img src="assets/drawables/lock.svg" alt="lock" /> End-to-end
-            encrypted
-          </div>
-        </div>
-        <app-chat [conversation]="conversation" *ngIf="conversation"></app-chat>
+        <router-outlet name="right"></router-outlet>
       </div>
     </div>
   </div>

@@ -1,6 +1,6 @@
 export interface RecentChatInterface {
   id: number;
-  displayName: string;
-  number: string;
-  displayProfileImage?: string;
+  display_name: string;
+  phone_number: string;
+  profile_image?: string;
 }

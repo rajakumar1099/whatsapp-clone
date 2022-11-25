@@ -25,10 +25,14 @@
 }
 
 .chat-item-container {
+
+}
+
+.chat-item {
   border-bottom: 1px solid var(--border-list);
 }
 
-.chat-item-container:hover {
+.chat-item:hover {
   background-color: var(--background-default-hover);
   cursor: pointer;
 
@@ -40,4 +44,28 @@
 
 img {
   fill: grey
+}
+
+
+.search-container {
+  height: 49px;
+  background-color: var(--background-white);
+  padding: 0 12px;
+  border-bottom: 1px solid var(--border-bottom);
+  display: flex;
+  align-items: center;
+}
+
+input,
+input:focus {
+  height: 35px;
+  background-color: var(--search-input-background);
+  border-radius: 8px;
+  border: unset;
+  font-size: 15px;
+}
+
+.input-group-text {
+  background-color: var(--search-input-background);
+  border: unset;
 }

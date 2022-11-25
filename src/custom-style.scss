@@ -21,6 +21,7 @@
   --border-list: #e9edef;
   --grey-text-color: #3b4a54;
   --text-muted: #8696a0;
+  --primary-strong: #111b21;
 }
 
 html,
@@ -53,5 +54,39 @@ body {
   /* Internet Explorer/Edge */
   user-select: none;
   /* Non-prefixed version, currently supported by Chrome, Edge, Opera and Firefox */
+}
+
+
+.slide-in {
+  animation: slide-in 0.2s forwards;
+  -webkit-animation: slide-in 0.2s forwards;
+}
+
+.slide-out {
+  animation: slide-out 0.2s forwards;
+  -webkit-animation: slide-out 0.2s forwards;
+}
+
+@keyframes slide-in {
+  100% { transform: translateX(0%); }
+}
+
+@-webkit-keyframes slide-in {
+  100% { -webkit-transform: translateX(0%); }
+}
+
+@keyframes slide-out {
+  0% { transform: translateX(0%); }
+  100% { transform: translateX(-50%); }
+}
+
+@-webkit-keyframes slide-out {
+  0% { -webkit-transform: translateX(0%); }
+  100% { -webkit-transform: translateX(-50%); }
+}
+
+.dropdown-item:active {
+  color: var(--bs-dropdown-link-hover-color);
+  background-color: var(--bs-dropdown-link-hover-bg);
 }
 
