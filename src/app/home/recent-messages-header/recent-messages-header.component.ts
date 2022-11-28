@@ -20,12 +20,12 @@ export class RecentMessagesHeaderComponent implements OnInit {
 
   public logout() {
     localStorage.clear();
-    this.router.navigate(['/login'], {skipLocationChange: true});
+    this.router.navigate(['/login'], { skipLocationChange: true });
   }
   public openNewChat() {
-    this.router.navigate(['/new-chat'], {skipLocationChange: true});
+    this.router.navigate(['/new-chat'], { skipLocationChange: true });
   }
   public openEditProfile() {
-    this.router.navigate(['/edit-profile'], {skipLocationChange: true});
+    this.router.navigate(['/edit-profile'], { skipLocationChange: true });
   }
 }

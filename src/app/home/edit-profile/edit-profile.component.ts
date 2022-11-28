@@ -6,6 +6,7 @@ import {
   FormGroup,
   Validators,
 } from '@angular/forms';
+import { Router } from '@angular/router';
 import { mergeMap, Subscription } from 'rxjs';
 import {
   LoginResponse,
@@ -33,7 +34,8 @@ export class EditProfileComponent implements OnInit, OnDestroy {
   constructor(
     private editProfileService: EditProfileService,
     private fileService: FileService,
-    private fb: FormBuilder
+    private fb: FormBuilder,
+    private router: Router
   ) {}
   ngOnDestroy(): void {
     this.subs.unsubscribe();
@@ -145,5 +147,9 @@ export class EditProfileComponent implements OnInit, OnDestroy {
   public editBio() {
     this.isEditBio = !this.isEditBio;
     this.setEditProfile();
+  }
+
+  public back() {
+    this.router.navigate(['/'])
   }
 }

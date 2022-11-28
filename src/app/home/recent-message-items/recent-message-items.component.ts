@@ -1,6 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { RecentChatInterface } from 'src/app/model/RecentChatInterface';
+import { ProfileInterface } from 'src/app/model/AuthInterface';
+import { ChatService } from 'src/app/services/chat-service/chat.service';
 import { DataService } from 'src/app/services/data-service/data.service';
 
 @Component({
@@ -10,8 +11,12 @@ import { DataService } from 'src/app/services/data-service/data.service';
 })
 export class RecentMessageItemsComponent implements OnInit {
   public filterTerm!: string;
-  @Input() recentChatData: RecentChatInterface[] | undefined = [];
-  constructor(private router: Router, private dataService: DataService) {}
+  @Input() recentChatData: ProfileInterface[] = [];
+  constructor(
+    private router: Router,
+    private dataService: DataService,
+    private chatService: ChatService
+  ) {}
 
   ngOnInit(): void {}
 

@@ -1,23 +1,23 @@
 import { Injectable } from '@angular/core';
-import { Observable, Subject } from 'rxjs';
+import { BehaviorSubject, Observable, Subject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
 })
 export class DataService {
-  private subject = new Subject<any>();
+  private behaviorSubject = new BehaviorSubject<any>(null);
 
   constructor() {}
 
   sendData(message: string) {
-    this.subject.next(message);
+    this.behaviorSubject.next(message);
   }
 
   clearData() {
-    this.subject.next(null);
+    this.behaviorSubject.next(null);
   }
 
   getData(): Observable<any> {
-    return this.subject.asObservable();
+    return this.behaviorSubject.asObservable();
   }
 }
