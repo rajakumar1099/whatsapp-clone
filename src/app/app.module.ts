@@ -20,6 +20,7 @@ import {
   NgbPaginationModule,
   NgbAlertModule,
   NgbModule,
+  NgbDropdown,
 } from '@ng-bootstrap/ng-bootstrap';
 import { NewChatComponent } from './home/new-chat/new-chat.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -55,6 +56,7 @@ import { DefaultContainerComponent } from './home/default-container/default-cont
     AuthService,
     AuthGuard,
     LoginGaurd,
+    NgbDropdown,
     {
       provide: HTTP_INTERCEPTORS,
       useClass: AddHeaderInterceptor,

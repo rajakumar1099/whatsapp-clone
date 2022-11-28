@@ -4,4 +4,5 @@ export enum FormControlConst {
   PROFILE_IMAGE = 'profile_image',
   DISPLAYNAME = 'display_name',
   PHONENUMBER = 'phone_number',
+  SEND_MESSAGE = 'send_message'
 }

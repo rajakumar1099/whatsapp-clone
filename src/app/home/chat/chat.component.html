@@ -1,8 +1,15 @@
-<div class="w-100 h-100 chat-background-color" *ngIf="conversation$ | async as conversation">
+<div
+  class="w-100 h-100 chat-background-color"
+  *ngIf="conversation$ | async as conversation"
+>
   <header class="d-flex">
     <img
       class="avatar"
-      [src]="conversation?.profile_image ? conversation?.profile_image : '/assets/drawables/default-avatar.svg'"
+      [src]="
+        conversation?.profile_image
+          ? conversation?.profile_image
+          : '/assets/drawables/default-avatar.svg'
+      "
       alt="avatar"
     />
     <div class="d-flex flex-column w-100">
@@ -17,11 +24,25 @@
     </div>
     <div class="d-flex">
       <div class="chat-header-icons">
-        <img class="search-icon" src="assets/drawables/search-icon.svg" alt="search" />
+        <img
+          class="search-icon"
+          src="assets/drawables/search-icon.svg"
+          alt="search"
+        />
       </div>
-      <div class="chat-header-icons">
-        <img class="menu-icon" src="assets/drawables/menu-icon.svg" alt="search" />
+      <div class="chat-header-icons" ngbDropdown placement="bottom-right">
+        <img
+          class="menu-icon"
+          src="assets/drawables/menu-icon.svg"
+          alt="search"
+          id="chatDropdown"
+          ngbDropdownToggle
+        />
+        <div ngbDropdownMenu aria-labelledby="chatDropdown" class="dropdown-menu">
+          <button ngbDropdownItem class="dropdown-item" (click)="deleteChat(conversation)">Delete Chat</button>
+        </div>
       </div>
+
     </div>
   </header>
   <div>
@@ -42,26 +63,29 @@
       *ngIf="showEmojiPicker"
     ></emoji-mart>
   </div>
-  <footer class="col-9 d-flex">
-    <div class="d-flex">
-      <img
-        src="assets/drawables/emoji-icon.svg"
-        alt="emoji-icon"
-        (click)="toggleEmojiPicker()"
-      />
-      <img src="assets/drawables/attachment-icon.svg" alt="emoji-icon" />
-    </div>
-    <div class="input-group">
-      <input
-        type="text"
-        class="form-control"
-        placeholder="Type a message"
-        autofocus
-        (input)="onSearchChange($event)"
-      />
-    </div>
-    <div *ngIf="showSendArrow">
-      <img src="../../../assets/drawables/send-icon.svg" alt="send-icon">
-    </div>
-  </footer>
+  <form [formGroup]="form">
+    <footer class="col-9 d-flex">
+      <div class="d-flex">
+        <img
+          src="assets/drawables/emoji-icon.svg"
+          alt="emoji-icon"
+          (click)="toggleEmojiPicker()"
+        />
+        <img src="assets/drawables/attachment-icon.svg" alt="emoji-icon" />
+      </div>
+      <div class="input-group">
+        <input
+          type="text"
+          class="form-control"
+          placeholder="Type a message"
+          autofocus
+          [formControlName]="formControlConst.SEND_MESSAGE"
+          (input)="onSearchChange($event)"
+        />
+      </div>
+      <div *ngIf="showSendArrow" (click)="sendMessage(conversation)">
+        <img src="../../../assets/drawables/send-icon.svg" alt="send-icon" />
+      </div>
+    </footer>
+  </form>
 </div>

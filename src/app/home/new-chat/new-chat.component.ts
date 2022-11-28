@@ -42,8 +42,6 @@ export class NewChatComponent implements OnInit {
   }
 
   public openChat(data: any) {
-    console.log(data);
-
     this.dataService.sendData(data);
     this.router.navigate(
       [
@@ -53,5 +51,9 @@ export class NewChatComponent implements OnInit {
       ],
       { skipLocationChange: true }
     );
+  }
+
+  public back() {
+    this.router.navigate(['/']);
   }
 }
